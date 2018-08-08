@@ -13,7 +13,7 @@ public class Main {
 	
 	private static String Get_menu() {
 		StringBuilder sb = new StringBuilder();
-		
+		//appending to string builder
 		sb.append("\nLibrary Main Menu\n\n")
 		  .append("  M  : add member\n")
 		  .append("  LM : list members\n")
@@ -120,7 +120,8 @@ public class Main {
 		output("\nEnded\n");
 	}	
 
-		private static void payFine() {
+	
+	private static void payFine() {
 		new PayFineUI(new PayFineControl()).run();		
 	}
 
