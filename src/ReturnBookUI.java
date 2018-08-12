@@ -1,3 +1,4 @@
+// Author Dismika
 import java.util.Scanner;
 
 
@@ -63,13 +64,13 @@ public class ReturnBookUI {
 		}
 	}
 
-	
+	//get input from user
 	private String input(String prompt) {
 		System.out.print(prompt);
 		return input.nextLine();
 	}	
 		
-		
+	// give output to user	
 	private void output(Object object) {
 		System.out.println(object);
 	}
@@ -78,7 +79,7 @@ public class ReturnBookUI {
 	public void display(Object object) {
 		output(object);
 	}
-	
+	// set UI
 	public void setState(UI_STATE state) {
 		this.state = state;
 	}
