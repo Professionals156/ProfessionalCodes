@@ -1,3 +1,5 @@
+//Amarjit
+
 import java.util.Scanner;
 
 
