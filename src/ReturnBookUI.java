@@ -10,7 +10,7 @@ public class ReturnBookUI {
 	private Scanner input;
 	private UI_STATE state;
 
-	// create constractor
+	// ################################# constractor ###################################
 	public ReturnBookUI(ReturnBookControl control) {
 		this.control = control;
 		input = new Scanner(System.in);
@@ -18,7 +18,7 @@ public class ReturnBookUI {
 		control.setUI(this);
 	}
 
-	// all the method
+	/* ############################all the method ####################################### */
 	public void run() {		
 		output("Return Book Use Case UI\n");
 		
