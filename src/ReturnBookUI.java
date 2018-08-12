@@ -9,7 +9,7 @@ public class ReturnBookUI {
 	private Scanner input;
 	private UI_STATE state;
 
-	
+	// create constractor
 	public ReturnBookUI(ReturnBookControl control) {
 		this.control = control;
 		input = new Scanner(System.in);
