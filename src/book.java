@@ -1,3 +1,4 @@
+// Author Dismika
 import java.io.Serializable;
 
 
@@ -31,7 +32,7 @@ public class book implements Serializable {
 		
 		return sb.toString();
 	}
-
+// settup getters setters
 	public Integer ID() {
 		return ID;
 	}
@@ -46,7 +47,7 @@ public class book implements Serializable {
 		return state == STATE.AVAILABLE;
 	}
 
-	
+// methods	
 	public boolean On_loan() {
 		return state == STATE.ON_LOAN;
 	}
