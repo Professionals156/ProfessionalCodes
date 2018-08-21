@@ -7,14 +7,14 @@ import java.util.Scanner;
 
 public class Main {
 	
-	private static Scanner in;   // changed variables uppercase to lowercase
-	private static library lib;      // changed variables uppercase to lowercase
-	private static String menu;// changed variables uppercase to lowercase
-	private static Calendar cal;// changed variables uppercase to lowercase
-	private static SimpleDateFormat sdf;// changed variables uppercase to lowercase
+	private static Scanner  in;   // changed variables uppercase to lowercase
+	private static library  lib;      // changed variables uppercase to lowercase
+	private static String  menu;// changed variables uppercase to lowercase
+	private static Calendar  cal;// changed variables uppercase to lowercase
+	private static SimpleDateFormat  sdf;// changed variables uppercase to lowercase
 	
 	
-	private static String get_menu() {      // changed method uppercase to lowercase
+	private static String  get_menu() {      // changed method uppercase to lowercase
 		StringBuilder sb = new StringBuilder();
 		//appending to string builder
 		sb.append("\nLibrary Main Menu\n\n")
@@ -42,10 +42,10 @@ public class Main {
 
 	public static void main(String[] args) {		
 		try {			
-			in = new Scanner(System.in);  // changed variables uppercase to lowercase
-			lib = library.INSTANCE();     // changed variables uppercase to lowercase
-			cal = Calendar.getInstance();      // changed variables uppercase to lowercase
-			sdf = new SimpleDateFormat("dd/MM/yyyy");   // changed variables uppercase to lowercase
+			in =  new Scanner(System.in);  // changed variables uppercase to lowercase
+			lib =  library.INSTANCE();     // changed variables uppercase to lowercase
+			cal =  Calendar.getInstance();      // changed variables uppercase to lowercase
+			sdf =  new SimpleDateFormat("dd/MM/yyyy");   // changed variables uppercase to lowercase
 	
 			for (member m : lib.Members()) {
 				output(m);
@@ -55,13 +55,13 @@ public class Main {
 				output(b);
 			}
 						
-			MENU = get_menu(); // changed method uppercase to lowercase
+			MENU =  get_menu(); // changed method uppercase to lowercase
 			
 			boolean e = false;
 			
 			while (!e) {
 				
-				output("\n" + sdf.format(cal.Date()));   // changed variables uppercase to lowercase
+				output("\n" +  sdf.format(cal.Date()));   // changed variables uppercase to lowercase
 				String c = input(MENU);
 				
 				switch (c.toUpperCase()) {
@@ -131,7 +131,7 @@ public class Main {
 
 	private static void listCurrentLoans() {
 		output("");
-		for (Loan loan : lib.CurrentLoans()) {    // changed Class Loan lowercase to uppercase 
+		for (Loan loan :  lib.CurrentLoans()) {    // changed Class Loan lowercase to uppercase 
 			output(loan + "\n"); 
 		}		
 	}
@@ -140,7 +140,7 @@ public class Main {
 
 	private static void listBooks() {
 		output("");
-		for (Book book : lib.Books()) {     // changed Class lowercase to uppercase 
+		for (Book book :  lib.Books()) {     // changed Class lowercase to uppercase 
 			output(book + "\n");
 		}		
 	}
@@ -149,7 +149,7 @@ public class Main {
 
 	private static void listMembers() {
 		output("");
-		for (Member member : lib.Members()) {   // changed Class lowercase to uppercase 
+		for (Member member :  lib.Members()) {   // changed Class lowercase to uppercase 
 			output(member + "\n");
 		}		
 	}
@@ -174,9 +174,9 @@ public class Main {
 	private static void incrementDate() {
 		try {
 			int days = Integer.valueOf(input("Enter number of days: ")).intValue();
-			cal.incrementDate(days);    // changed variables uppercase to lowercase
+			 cal.incrementDate(days);    // changed variables uppercase to lowercase
 		 lib.checkCurrentLoans();
-			output(SDF.format(cal.Date()));   // changed variables uppercase to lowercase
+			 output(SDF.format(cal.Date()));   // changed variables uppercase to lowercase
 			
 		} catch (NumberFormatException e) {
 			 output("\nInvalid number of days\n");
@@ -189,7 +189,7 @@ public class Main {
 		String author = input("Enter author: ");
 		String title  = input("Enter title: ");
 		String callNo = input("Enter call number: ");
-		Book book = lib.add_book(author, title, callNo);   // changed method uppercase to lowercase
+		 Book book = lib.add_book(author, title, callNo);   // changed method uppercase to lowercase
 		output("\n" + book + "\n");
 		
 	}
