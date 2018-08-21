@@ -25,7 +25,7 @@ public class FixBookUI {
 	}
 
 	
-	public void run() {
+	public static void run() {            // use static for method access from anywhere
 		output("Fix Book Use Case UI\n");
 		
 		while (true) {
@@ -59,6 +59,7 @@ public class FixBookUI {
 								
 			case COMPLETED:
 				output("Fixing process complete");
+				throw new RuntimeException("FixBookUI : unhandled state :" + state);   // unhandled exception can be here
 				return;
 			
 			default:
