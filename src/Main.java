@@ -1,19 +1,21 @@
+//Kapil
+
 import java.text.SimpleDateFormat;
 import java.util.Scanner;
 
 
 public class Main {
 	
-	private static Scanner IN;
-	private static library LIB;
-	private static String MENU;
-	private static Calendar CAL;
-	private static SimpleDateFormat SDF;
+	private static Scanner in;   // changed variables uppercase to lowercase
+	private static library lib;      // changed variables uppercase to lowercase
+	private static String menu;// changed variables uppercase to lowercase
+	private static Calendar cal;// changed variables uppercase to lowercase
+	private static SimpleDateFormat sdf;// changed variables uppercase to lowercase
 	
 	
-	private static String Get_menu() {
+	private static String get_menu() {      // changed method uppercase to lowercase
 		StringBuilder sb = new StringBuilder();
-		
+		//appending to string builder
 		sb.append("\nLibrary Main Menu\n\n")
 		  .append("  M  : add member\n")
 		  .append("  LM : list members\n")
@@ -39,26 +41,26 @@ public class Main {
 
 	public static void main(String[] args) {		
 		try {			
-			IN = new Scanner(System.in);
-			LIB = library.INSTANCE();
-			CAL = Calendar.getInstance();
-			SDF = new SimpleDateFormat("dd/MM/yyyy");
+			in = new Scanner(System.in);  // changed variables uppercase to lowercase
+			lib = library.INSTANCE();     // changed variables uppercase to lowercase
+			cal = Calendar.getInstance();      // changed variables uppercase to lowercase
+			sdf = new SimpleDateFormat("dd/MM/yyyy");   // changed variables uppercase to lowercase
 	
-			for (member m : LIB.Members()) {
+			for (member m : lib.Members()) {
 				output(m);
 			}
 			output(" ");
-			for (book b : LIB.Books()) {
+			for (book b : lib.Books()) {
 				output(b);
 			}
 						
-			MENU = Get_menu();
+			MENU = get_menu(); // changed method uppercase to lowercase
 			
 			boolean e = false;
 			
 			while (!e) {
 				
-				output("\n" + SDF.format(CAL.Date()));
+				output("\n" + sdf.format(cal.Date()));   // changed variables uppercase to lowercase
 				String c = input(MENU);
 				
 				switch (c.toUpperCase()) {
@@ -120,15 +122,16 @@ public class Main {
 		output("\nEnded\n");
 	}	
 
-		private static void payFine() {
+	
+	private static void payFine() {
 		new PayFineUI(new PayFineControl()).run();		
 	}
 
 
 	private static void listCurrentLoans() {
 		output("");
-		for (loan loan : LIB.CurrentLoans()) {
-			output(loan + "\n");
+		for (Loan loan : lib.CurrentLoans()) {    // changed Class Loan lowercase to uppercase 
+			output(loan + "\n"); 
 		}		
 	}
 
@@ -136,7 +139,7 @@ public class Main {
 
 	private static void listBooks() {
 		output("");
-		for (book book : LIB.Books()) {
+		for (Book book : lib.Books()) {     // changed Class lowercase to uppercase 
 			output(book + "\n");
 		}		
 	}
@@ -145,7 +148,7 @@ public class Main {
 
 	private static void listMembers() {
 		output("");
-		for (member member : LIB.Members()) {
+		for (Member member : lib.Members()) {   // changed Class lowercase to uppercase 
 			output(member + "\n");
 		}		
 	}
@@ -170,9 +173,9 @@ public class Main {
 	private static void incrementDate() {
 		try {
 			int days = Integer.valueOf(input("Enter number of days: ")).intValue();
-			CAL.incrementDate(days);
-			LIB.checkCurrentLoans();
-			output(SDF.format(CAL.Date()));
+			cal.incrementDate(days);    // changed variables uppercase to lowercase
+		 lib.checkCurrentLoans();
+			output(SDF.format(cal.Date()));   // changed variables uppercase to lowercase
 			
 		} catch (NumberFormatException e) {
 			 output("\nInvalid number of days\n");
@@ -185,7 +188,7 @@ public class Main {
 		String author = input("Enter author: ");
 		String title  = input("Enter title: ");
 		String callNo = input("Enter call number: ");
-		book book = LIB.Add_book(author, title, callNo);
+		Book book = lib.add_book(author, title, callNo);   // changed method uppercase to lowercase
 		output("\n" + book + "\n");
 		
 	}
@@ -197,7 +200,7 @@ public class Main {
 			String firstName  = input("Enter first name: ");
 			String email = input("Enter email: ");
 			int phoneNo = Integer.valueOf(input("Enter phone number: ")).intValue();
-			member member = LIB.Add_mem(lastName, firstName, email, phoneNo);
+			Member member = lib.add_mem(lastName, firstName, email, phoneNo);
 			output("\n" + member + "\n");
 			
 		} catch (NumberFormatException e) {
@@ -209,7 +212,7 @@ public class Main {
 
 	private static String input(String prompt) {
 		System.out.print(prompt);
-		return IN.nextLine();
+		return in.nextLine();
 	}
 	
 	
