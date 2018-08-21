@@ -6,8 +6,8 @@ public class FixBookControl {
 	private enum CONTROL_STATE { INITIALISED, READY, FIXING };
 	private CONTROL_STATE state;
 	
-	private library library;
-	private book currentBook;
+	private Library library;       // changed class lowercase to uppercase
+	private Book currentBook;        // changed class lowercase to uppercase
 
 
 	public FixBookControl() {
