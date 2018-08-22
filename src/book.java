@@ -21,7 +21,7 @@ public class book implements Serializable {
 		this.ID = id;
 		this.state = STATE.AVAILABLE;
 	}
-	
+	// string append
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		sb.append("Book: ").append(ID).append("\n")
@@ -47,7 +47,7 @@ public class book implements Serializable {
 		return state == STATE.AVAILABLE;
 	}
 
-// methods	
+// methods`	
 	public boolean On_loan() {
 		return state == STATE.ON_LOAN;
 	}
@@ -79,7 +79,7 @@ public class book implements Serializable {
 			}
 		}
 		else {
-			throw new RuntimeException(String.format("Book: cannot Return while book is in state: %s", state));
+			throw new RuntimeException(String.format("Book: cannot Return while book is in state: %s", state)); // exception handle
 		}		
 	}
 
