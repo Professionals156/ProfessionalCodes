@@ -1,3 +1,4 @@
+// Author Dismika
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
@@ -34,7 +35,7 @@ public class library implements Serializable {
 	private Map<Integer, loan> currentLoans;
 	private Map<Integer, book> damagedBooks;
 	
-
+// constractor
 	private library() {
 		catalog = new HashMap<>();
 		members = new HashMap<>();
@@ -81,7 +82,7 @@ public class library implements Serializable {
 		}
 	}
 
-	
+	// set up all the getters setters
 	public int BookID() {
 		return BID;
 	}
@@ -169,7 +170,7 @@ public class library implements Serializable {
 		return true;
 	}
 
-	
+	// all the method
 	public int loansRemainingForMember(member member) {		
 		return LOAN_LIMIT - member.getNumberOfCurrentLoans();
 	}
