@@ -1,4 +1,4 @@
-//Akila
+//Akila Kanishka Gangodage
 
 public class PayFineControl {
 	
