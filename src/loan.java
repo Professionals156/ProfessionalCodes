@@ -32,17 +32,17 @@ public class loan implements Serializable {
 		}
 	}
 
-	
+	//get over due status
 	public boolean isOverDue() {
 		return state == LOAN_STATE.OVER_DUE;
 	}
 
-	
+	//get id
 	public Integer getId() {
 		return ID;
 	}
 
-
+	//get due date
 	public Date getDueDate() {
 		return D;
 	}
