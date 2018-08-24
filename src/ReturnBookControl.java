@@ -25,24 +25,24 @@ public class ReturnBookControl {
 		state = CONTROL_STATE.READY;		
 	}
 
-
+	//scannig the books
 	public void bookScanned(int bookId) {
 		if (!state.equals(CONTROL_STATE.READY)) {
 			throw new RuntimeException("ReturnBookControl: cannot call bookScanned except in READY state");
 		}	
 		book currentBook = library.Book(bookId);
 		
-		if (currentBook == null) {
+		if (currentBook == null) { // validation
 			ui.display("Invalid Book Id");
 			return;
 		}
-		if (!currentBook.On_loan()) {
+		if (!currentBook.On_loan()) { // check availability 
 			ui.display("Book has not been borrowed");
 			return;
 		}		
 		currentLoan = library.getLoanByBookId(bookId);	
 		double overDueFine = 0.0;
-		if (currentLoan.isOverDue()) {
+		if (currentLoan.isOverDue()) { // check overdue
 			overDueFine = library.calculateOverDueFine(currentLoan);
 		}
 		ui.display("Inspecting");
@@ -56,7 +56,7 @@ public class ReturnBookControl {
 		state = CONTROL_STATE.INSPECTING;		
 	}
 
-
+	// complete the scannig
 	public void scanningComplete() {
 		if (!state.equals(CONTROL_STATE.READY)) {
 			throw new RuntimeException("ReturnBookControl: cannot call scanningComplete except in READY state");
@@ -64,7 +64,7 @@ public class ReturnBookControl {
 		ui.setState(ReturnBookUI.UI_STATE.COMPLETED);		
 	}
 
-
+	//loan discharging
 	public void dischargeLoan(boolean isDamaged) {
 		if (!state.equals(CONTROL_STATE.INSPECTING)) {
 			throw new RuntimeException("ReturnBookControl: cannot call dischargeLoan except in INSPECTING state");
