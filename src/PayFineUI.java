@@ -25,7 +25,7 @@ public class PayFineUI {
 		this.state = state;
 	}
 
-
+	// Run methode 
 	public void run() {
 		output("Pay Fine Use Case UI\n");
 		
@@ -33,7 +33,7 @@ public class PayFineUI {
 			
 			switch (state) {
 			
-			case READY:
+			case READY: 
 				String memStr = input("Swipe member card (press <enter> to cancel): ");
 				if (memStr.length() == 0) {
 					control.cancel();
@@ -48,7 +48,7 @@ public class PayFineUI {
 				}
 				break;
 				
-			case PAYING:
+			case PAYING: // make the payment 
 				double amount = 0;
 				String amtStr = input("Enter amount (<Enter> cancels) : ");
 				if (amtStr.length() == 0) {
@@ -66,11 +66,11 @@ public class PayFineUI {
 				control.payFine(amount);
 				break;
 								
-			case CANCELLED:
+			case CANCELLED: // cancelle the Pay Fine process 
 				output("Pay Fine process cancelled");
 				return;
 			
-			case COMPLETED:
+			case COMPLETED: //complete the Pay Fine process 
 				output("Pay Fine process complete");
 				return;
 			
