@@ -6,20 +6,20 @@ import java.util.List;
 
 public class BorrowBookControl {
 	
-	private BorrowBookUI ui;
+	private BorrowBookUI ui;   // changed uppercase to lowercase 
 	
-	private library L;
-	private member M;
+	private library l;
+	private member m;   // changed uppercase to lowercase 
 	private enum CONTROL_STATE { INITIALISED, READY, RESTRICTED, SCANNING, IDENTIFIED, FINALISING, COMPLETED, CANCELLED };
 	private CONTROL_STATE state;
 	
-	private List<book> PENDING;
+	private List<book> pending;
 	private List<loan> COMPLETED;
 	private book B;
 	
 	
 	public BorrowBookControl() {
-		this.L = L.INSTANCE();
+		this.L = L.instance();    // changed uppercase to lowercase 
 		state = CONTROL_STATE.INITIALISED;
 	}
 	
@@ -63,7 +63,7 @@ public class BorrowBookControl {
 			ui.display("Invalid bookId");
 			return;
 		}
-		if (!B.Available()) {
+		if (!B.available()) {           // changed method uppercase to lowercase 
 			ui.display("Book cannot be borrowed");
 			return;
 		}
@@ -84,36 +84,42 @@ public class BorrowBookControl {
 		}
 		else {
 			ui.display("\nFinal Borrowing List");
-			for (book b : PENDING) {
+			for (book b : pending) {          // changed uppercase to lowercase 
 				ui.display(b.toString());
 			}
 			COMPLETED = new ArrayList<loan>();
-			ui.setState(BorrowBookUI.UI_STATE.FINALISING);
+			ui.setState(BorrowBookUI.UI_STATE.finalising);  // make it more meaningful
 			state = CONTROL_STATE.FINALISING;
 		}
 	}
 
 
 	public void commitLoans() {
-		if (!state.equals(CONTROL_STATE.FINALISING)) {
+		
+               if (!state.equals(CONTROL_STATE.finalising)) {     // changed uppercase to lowercase 
 			throw new RuntimeException("BorrowBookControl: cannot call commitLoans except in FINALISING state");
-		}	
+		}
+ 	
 		for (book b : PENDING) {
 			loan loan = L.issueLoan(b, M);
 			COMPLETED.add(loan);			
 		}
+
 		ui.display("Completed Loan Slip");
 		for (loan loan : COMPLETED) {
 			ui.display(loan.toString());
 		}
+
 		ui.setState(BorrowBookUI.UI_STATE.COMPLETED);
 		state = CONTROL_STATE.COMPLETED;
 	}
 
 	
-	public void cancel() {
+	public void cancel() {          // structure should be clear
+
 		ui.setState(BorrowBookUI.UI_STATE.CANCELLED);
 		state = CONTROL_STATE.CANCELLED;
+
 	}
 	
 	
