@@ -22,8 +22,10 @@ public class Calendar {
 	}
 	
 
-	public void incrementDate(int days) {
-		cal.add(java.util.Calendar.DATE, days);		
+	public Date incrementDate(int days) {
+		cal.add(java.util.Calendar.DATE, days);	
+
+              return Calendar.DATE; // changes return type	
 	}
 	
 	public synchronized void setDate(Date date) {
@@ -55,15 +57,18 @@ public class Calendar {
 	}
 
 	public synchronized Date getDueDate(int loanPeriod) {
-		Date now = Date();
+		
+                Date now = Date();
 		cal.add(java.util.Calendar.DATE, loanPeriod);
 		Date dueDate = cal.getTime();
 		cal.setTime(now);
 		return dueDate;
-	}
 	
-	public synchronized long getDaysDifference(Date targetDate) {
-		long diffMillis = Date().getTime() - targetDate.getTime();
+        }
+	
+	public synchronized long getDaysDifference(Date targetDate) {       // more structure improvement
+		
+            long diffMillis = Date().getTime() - targetDate.getTime();
 	    long diffDays = TimeUnit.DAYS.convert(diffMillis, TimeUnit.MILLISECONDS);
 	    return diffDays;
 	}
