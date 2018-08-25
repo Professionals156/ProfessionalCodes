@@ -14,11 +14,14 @@ public class Main {
 	private static SimpleDateFormat  sdf;// changed variables uppercase to lowercase
 	
 	
-	private static String  get_menu() {      // changed method uppercase to lowercase
-		StringBuilder sb = new StringBuilder();
-		//appending to string builder
-		sb.append("\nLibrary Main Menu\n\n")
-		  .append("  M  : add member\n")
+	private static String  get_Menu() {      // changed method uppercase to lowercase
+		
+           StringBuilder sb = new StringBuilder();
+	                                                       // more error free structure
+           	//appending to string builder
+
+		sb.append("\n Library Main Menu\n\n")        // meaningful keywords used
+		  .append("  M  : add member\n") 
 		  .append("  LM : list members\n")
 		  .append("\n")
 		  .append("  B  : add book\n")
