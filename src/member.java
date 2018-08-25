@@ -9,10 +9,10 @@ import java.util.Map;
 @SuppressWarnings("serial")
 public class member implements Serializable {
 
-	private String LN;
-	private String FN;
-	private String EM;
-	private int PN;
+	private String LASTNAME;
+	private String FIRSTNAME;
+	private String EMAIL;
+	private int PHONENO;
 	private int ID;
 	private double FINES;
 	
@@ -20,10 +20,10 @@ public class member implements Serializable {
 
 	
 	public member(String lastName, String firstName, String email, int phoneNo, int id) {
-		this.LN = lastName;
-		this.FN = firstName;
-		this.EM = email;
-		this.PN = phoneNo;
+		this.LASTNAME = lastName;
+		this.FIRSTNAME = firstName;
+		this.EMAIL = email;
+		this.PHONENO = phoneNo;
 		this.ID = id;
 		
 		this.LNS = new HashMap<>();
