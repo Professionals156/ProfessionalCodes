@@ -2,6 +2,7 @@
 
 //Kapil
 
+
 import java.text.SimpleDateFormat;
 import java.util.Scanner;
 
@@ -15,15 +16,16 @@ public class Main {
 	private static SimpleDateFormat  sdf;// changed variables uppercase to lowercase
 	
 	
-	private static String  get_Menu() {       // changed method uppercase to lowercase
+
+	private static String  get_Menu() {      // changed method uppercase to lowercase
 		
-             StringBuilder sb = new StringBuilder();
-		
-                //appending to string builder
-		                                          // improved coding structure
-               sb.append("\n Library Main Menu\n\n")
-		  .append("  M  : add member\n")
-		  .append("  LM : list members\n")
+           StringBuilder sb = new StringBuilder();
+	                                                       // more error free structure
+           	//appending to string builder
+
+		sb.append("\n Library Main Menu\n\n")        // meaningful keywords used
+		  .append("  M  : add member\n") 
+       .append("  LM : list members\n")
 		  .append("\n")
 		  .append("  B  : add book\n")
 		  .append("  LB : list books\n")
@@ -223,7 +225,7 @@ public class Main {
 	
 	
 	
-	private static void output(Object object) {
+	 private static void output(Object object) {
 		System.out.println(object);
 	}
 
