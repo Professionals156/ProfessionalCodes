@@ -14,13 +14,10 @@ public class Main {
 	private static SimpleDateFormat  sdf;// changed variables uppercase to lowercase
 	
 	
-	private static String  get_Menu() {      // changed method uppercase to lowercase
-		
-             StringBuilder sb = new StringBuilder();
-		
-               //appending to string builder               // coding structure should follow guidelines
-		
-                 sb.append("\n Library Main Menu\n\n")
+	private static String  get_menu() {      // changed method uppercase to lowercase
+		StringBuilder sb = new StringBuilder();
+		//appending to string builder
+		sb.append("\nLibrary Main Menu\n\n")
 		  .append("  M  : add member\n")
 		  .append("  LM : list members\n")
 		  .append("\n")
@@ -58,7 +55,7 @@ public class Main {
 				output(b);
 			}
 						
-			MENU =  get_Menu(); // changed method uppercase to lowercase
+			MENU =  get_menu(); // changed method uppercase to lowercase
 			
 			boolean e = false;
 			
