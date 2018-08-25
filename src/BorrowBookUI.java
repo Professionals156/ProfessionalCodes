@@ -68,7 +68,7 @@ public class BorrowBookUI {
 				
 			case RESTRICTED:
 				input("Press <any key> to cancel");
-				control.cancel();
+				control.CANCEL();  // changed lowercase to uppercase 
 				break;
 			
 				
@@ -76,12 +76,12 @@ public class BorrowBookUI {
 
 				String bookStr = input("Scan Book (<enter> completes): ");
 				if (bookStr.length() == 0) {
-					control.Complete();
+					control.complete();// changed uppercase to lowercase 
 					break;
 				}
 				try {
 					int bookId = Integer.valueOf(bookStr).intValue();
-					control.Scanned(bookId);
+					control.scanned(bookId);  // use lower letters
 					
 				} catch (NumberFormatException e) {
 					output("Invalid Book Id");
@@ -90,14 +90,16 @@ public class BorrowBookUI {
 					
 				
 			case FINALISING:
+
 				String ans = input("Commit loans? (Y/N): ");
-				if (ans.toUpperCase().equals("N")) {
+				if (ans.toUpperCase().equals("N")) {                  // structure changes
 					control.cancel();
 					
 				} else {
 					control.commitLoans();
 					input("Press <any key> to complete ");
 				}
+
 				break;
 				
 				
