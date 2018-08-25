@@ -46,22 +46,22 @@ public class member implements Serializable {
 		return sb.toString();
 	}
 
-	
+	//get id
 	public int getId() {
 		return ID;
 	}
 
-	
+	//get loan list
 	public List<loan> getLoans() {
 		return new ArrayList<loan>(LNS.values());
 	}
 
-	
+	//get current loan count
 	public int getNumberOfCurrentLoans() {
 		return LNS.size();
 	}
 
-	
+	//get fine
 	public double getFinesOwed() {
 		return FINES;
 	}
@@ -76,12 +76,12 @@ public class member implements Serializable {
 		}		
 	}
 
-	
+	//get last name
 	public String getLastName() {
 		return LN;
 	}
 
-	
+	//get first name
 	public String getFirstName() {
 		return FN;
 	}
