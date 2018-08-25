@@ -3,7 +3,7 @@
 public class FixBookControl {
 	
 	private FixBookUI ui;
-	private enum CONTROL_STATE { INITIALISED, READY, FIXING };
+	private enum CONTROL_STATE { INITIALISED, READY, FIXING };   
 	private CONTROL_STATE state;
 	
 	private Library library;       // changed class lowercase to uppercase
@@ -11,7 +11,7 @@ public class FixBookControl {
 
 
 	public FixBookControl() {
-		this.library = library.INSTANCE();
+		this.library = library.instance();  // method name changed from uppercase to lowercase
 		state = CONTROL_STATE.INITIALISED;
 	}
 	
@@ -22,7 +22,7 @@ public class FixBookControl {
 		}	
 		this.ui = ui;
 		ui.setState(FixBookUI.UI_STATE.READY);
-		state = CONTROL_STATE.READY;		
+		state = state.READY;	  // fix keyword errors	
 	}
 
 
@@ -36,7 +36,7 @@ public class FixBookControl {
 			ui.display("Invalid bookId");
 			return;
 		}
-		if (!currentBook.Damaged()) {
+		if (!currentBook.D\damaged()) {    // uppercase to lowercase letter of method name
 			ui.display("\"Book has not been damaged");
 			return;
 		}
