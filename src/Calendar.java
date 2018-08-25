@@ -13,6 +13,7 @@ public class Calendar {
 		cal = java.util.Calendar.getInstance();
 	}
 	
+
 	public static Calendar getInstance() {
 		if (self == null) {
 			self = new Calendar();
@@ -20,6 +21,7 @@ public class Calendar {
 		return self;
 	}
 	
+
 	public void incrementDate(int days) {
 		cal.add(java.util.Calendar.DATE, days);		
 	}
@@ -36,14 +38,17 @@ public class Calendar {
 			throw new RuntimeException(e);
 		}	
 	}
-	public synchronized Date Date() {
-		try {
-	        cal.set(java.util.Calendar.HOUR_OF_DAY, 0);  
+	public synchronized Date date() {   // changed method uppercase to lowercase 
+		
+           try {   
+	   
+                cal.set(java.util.Calendar.HOUR_OF_DAY, 0);  
 	        cal.set(java.util.Calendar.MINUTE, 0);  
 	        cal.set(java.util.Calendar.SECOND, 0);  
 	        cal.set(java.util.Calendar.MILLISECOND, 0);
-			return cal.getTime();
-		}
+			return cal.getTime();                      // changes in structure
+	 
+         	}
 		catch (Exception e) {
 			throw new RuntimeException(e);
 		}	
