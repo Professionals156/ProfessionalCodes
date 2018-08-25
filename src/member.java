@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 @SuppressWarnings("serial")
-public class member implements Serializable {
+public class Member implements Serializable {
 
 	private String LASTNAME;
 	private String FIRSTNAME;
