@@ -1,5 +1,7 @@
 
+
 //Kapil
+
 
 import java.text.SimpleDateFormat;
 import java.util.Scanner;
@@ -14,6 +16,7 @@ public class Main {
 	private static SimpleDateFormat  sdf;// changed variables uppercase to lowercase
 	
 	
+
 	private static String  get_Menu() {      // changed method uppercase to lowercase
 		
            StringBuilder sb = new StringBuilder();
@@ -22,7 +25,7 @@ public class Main {
 
 		sb.append("\n Library Main Menu\n\n")        // meaningful keywords used
 		  .append("  M  : add member\n") 
-		  .append("  LM : list members\n")
+       .append("  LM : list members\n")
 		  .append("\n")
 		  .append("  B  : add book\n")
 		  .append("  LB : list books\n")
@@ -58,7 +61,7 @@ public class Main {
 				output(b);
 			}
 						
-			MENU =  get_menu(); // changed method uppercase to lowercase
+			MENU =  get_Menu(); // changed method uppercase to lowercase
 			
 			boolean e = false;
 			
@@ -114,15 +117,16 @@ public class Main {
 					break;
 					
 				default: 
-					output("\nInvalid option\n");
+					output("\n Invalid option\n");
 					break;
 				}
 				
-				library.SAVE();
+				library.save();
 			}			
 		} catch (RuntimeException e) {
 			output(e);
-		}		
+		}
+		
 		output("\nEnded\n");
 	}	
 
