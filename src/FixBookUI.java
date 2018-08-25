@@ -15,7 +15,7 @@ public class FixBookUI {
 	public FixBookUI(FixBookControl control) {
 		this.control = control;
 		input = new Scanner(System.in);
-		state = UI_STATE.INITIALISED;
+		state = UI_STATE.initialised;    // method uppercase to lowercase
 		control.setUI(this);
 	}
 
@@ -30,11 +30,14 @@ public class FixBookUI {
 		
 		while (true) {
 			
-			switch (state) {
+			switch (state) {             // improved code structure and statements
 			
-			case READY:
-				String bookStr = input("Scan Book (<enter> completes): ");
-				if (bookStr.length() == 0) {
+			
+                               case READY:
+				
+                                 String bookStr = input("Scan Book (<Book> completes): ");  // changed type class book
+				
+                                if (bookStr.length() == 0) {
 					control.scanningComplete();
 				}
 				else {
