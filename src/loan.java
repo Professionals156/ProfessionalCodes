@@ -10,9 +10,9 @@ public class loan implements Serializable {
 	public static enum LOAN_STATE { CURRENT, OVER_DUE, DISCHARGED };
 	
 	private int ID;
-	private book B;
-	private member M;
-	private Date D;
+	private book BOOK;
+	private member MEMBER;
+	private Date DATE;
 	private LOAN_STATE state;
 
 	
