@@ -3,7 +3,7 @@
 import java.util.Scanner;
 
 
-public class BorrowBookUI {
+public class BorrowBookUI {    
 	
 	public static enum UI_STATE { INITIALISED, READY, RESTRICTED, SCANNING, IDENTIFIED, FINALISING, COMPLETED, CANCELLED };
 
@@ -15,7 +15,7 @@ public class BorrowBookUI {
 	public BorrowBookUI(BorrowBookControl control) {
 		this.control = control;
 		input = new Scanner(System.in);
-		state = UI_STATE.INITIALISED;
+		state = UI_STATE.initialised;  // changed uppercase to lowercase   
 		control.setUI(this);
 	}
 
@@ -37,9 +37,11 @@ public class BorrowBookUI {
 
 	
 	public void run() {
-		output("Borrow Book Use Case UI\n");
-		
-		while (true) {
+		  
+
+             output("Borrow Book Use Case UI\n");
+		                                       // loop structure clear
+		    while (true) {
 			
 			switch (state) {			
 			
@@ -71,6 +73,7 @@ public class BorrowBookUI {
 			
 				
 			case SCANNING:
+
 				String bookStr = input("Scan Book (<enter> completes): ");
 				if (bookStr.length() == 0) {
 					control.Complete();
